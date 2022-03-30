@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react'
-import { Route, Routes } from 'react-router-dom'
+import { Navigate, Route, Routes } from 'react-router-dom'
 import './App.css'
+import Login from './pages/Login/Login';
 import Header from './pages/header/Header';
+import Home from './pages/main/home';
 import NotFound from './pages/NotFound';
+import Footer from './pages/footer/Footer';
 
 function App() {
 
@@ -18,13 +21,14 @@ function App() {
     const photo = e.target.photo.value
     const password = e.target.password.value
     const phone_number = e.target.phone.value
+    const dateCreated = Date()
 
     fetch('http://localhost:4000/signup', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
-      body: JSON.stringify({ email: email, password: password, photo: photo, firstName: firstName, lastName: lastName, phone_number: phone_number })
+      body: JSON.stringify({ email: email, password: password, photo: photo, firstName: firstName, lastName: lastName, phone_number: phone_number, dateCreated: dateCreated })
     })
       .then(resp => resp.json())
       .then(data => {
@@ -84,103 +88,23 @@ function App() {
     }
   }, [])
 
+  console.log(user)
   if (user === null)
+
     return (
-      <div className='App'>
-        <h1>Hello there, stranger!</h1>
-        <div>
-          <form onSubmit={signUp}>
-            <label>
-              Name
-              <input
-                className="firstname"
-                placeholder="First name"
-                name='firstName'
-                type="text"
-              />
-            </label>
-            <label>
-              Last Name
-              <input
-                className="lastname"
-                placeholder="Last name"
-                name='lastName'
-                type="text"
-              />
-            </label>
-            <label>
-              Profile Pic
-              <input
-                className="profilepic"
-                placeholder="Profile pic URL (optional)"
-                name='photo'
-                type="text"
-              />
-            </label>
+      <Login login={login} signUp={signUp} />
 
-            <label>
-              Pjone
-              <input
-                className="phone"
-                placeholder="phone"
-                name='phone'
-                type="number"
-              />
-            </label>
-
-            <label>
-              Email
-              <input
-                className="email"
-                placeholder="Email"
-                name='email'
-                type="email"
-              />
-            </label>
-            <label>
-              Password
-              <input
-                className="password"
-                placeholder="Password"
-                name='password'
-                type="password"
-              />
-            </label>
-            <input type='submit' className="submit" value={'SAVE'} />
-          </form>
-
-          <form onSubmit={login}>
-            <h2>Already have an account? Sign in!</h2>
-            <input type='email' required placeholder='email' name='email' />
-            <input
-              type='password'
-              required
-              placeholder='password'
-              name='password'
-            />
-            <button>SIGN IN</button>
-          </form>
-        </div>
-      </div>
     )
 
   return (
     <div className='App'>
-      <Header />
+      <Header signOut={signOut} />
       <Routes>
+        <Route index element={<Navigate replace to={'/home'} />} />
+        <Route path='/home' element={<Home user={user} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
-      <h1>Hello there, {user.name}!</h1>
-      <button onClick={signOut}>SIGN OUT</button>
-
-      <ul>
-        {/* {user.photos.map(photo => ( */}
-        <li>
-          <h2>img</h2>
-          <img src='' alt='' />
-        </li>
-        {/* ))} */}
-      </ul>
+      <Footer />
     </div>
   )
 }

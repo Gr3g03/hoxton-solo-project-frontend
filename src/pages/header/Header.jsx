@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import './Header.css'
 
-function Header() {
+function Header({ signOut }) {
     return (
         <div className='header'>
             <Link to='/'>
@@ -22,6 +22,7 @@ function Header() {
                 <img src='./src/assets/language.svg' alt='' />
                 <img src='./src/assets/expand.svg' alt='' />
                 <img src='./src/assets/avatar.svg' alt='' />
+                <button className="sign_out" onClick={signOut}>SIGN OUT</button>
             </div>
         </div>
     )
