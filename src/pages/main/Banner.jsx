@@ -1,11 +1,12 @@
 import { useState } from "react";
-import Search from "./search";
+import Search from "./Search";
 import { useNavigate } from 'react-router-dom';
 
 
 function Banner() {
     const [showSearch, setShowSearch] = useState(false);
     const navigate = useNavigate()
+
     return (
         <div className='banner'>
             <div className='banner__search'>
@@ -20,7 +21,7 @@ function Banner() {
                 <h5>
                     Plan a different kind of getaway to uncover the hidden gems near you.
                 </h5>
-                <button onClick={() => navigate('/search')} >Explore Nearby</button>
+                <button onClick={() => navigate('/nearby')} >Explore Nearby</button>
             </div>
         </div>
     )

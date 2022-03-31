@@ -18,9 +18,8 @@ function Header({ signOut }) {
             </div>
 
             <div className='header__right'>
-                <p>Become a host</p>
-                <img src='./src/assets/language.svg' alt='' />
-                <img src='./src/assets/expand.svg' alt='' />
+                {/* <img src='./src/assets/language.svg' alt='' /> */}
+                {/* <img src='./src/assets/expand.svg' alt='' /> */}
                 <img src='./src/assets/avatar.svg' alt='' />
                 <button className="sign_out" onClick={signOut}>SIGN OUT</button>
             </div>

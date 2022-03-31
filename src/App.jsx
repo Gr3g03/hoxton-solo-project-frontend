@@ -6,6 +6,8 @@ import Header from './pages/header/Header';
 import Home from './pages/main/home';
 import NotFound from './pages/NotFound';
 import Footer from './pages/footer/Footer';
+import Neadrby from './pages/Nearby/Nearby';
+import NearbyAppartamnet from './pages/Nearby/NearbyAppartament';
 
 function App() {
 
@@ -102,6 +104,8 @@ function App() {
       <Routes>
         <Route index element={<Navigate replace to={'/home'} />} />
         <Route path='/home' element={<Home user={user} />} />
+        <Route path='/nearby' element={<Neadrby />} />
+        <Route path='nearby/:id' element={<NearbyAppartamnet />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

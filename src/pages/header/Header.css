@@ -11,7 +11,7 @@
   
   .header__icon {
     object-fit: contain;
-    height: 100px;
+    height: 80px;
     margin-left: 20px;
   }
   
@@ -39,4 +39,11 @@
     justify-content: space-between;
     width: 15vw;
     margin-right: 80px;
+  }
+
+  .sign_out{
+    border: none;
+    color: #ff7779;
+    font-size: 16px;
+    background-color: white;
   }
