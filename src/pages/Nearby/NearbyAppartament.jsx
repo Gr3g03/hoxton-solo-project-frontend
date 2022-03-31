@@ -1,31 +1,42 @@
+import { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
 import './NearbyAppartament.css'
 export default function NearbyAppartamnet() {
+
+    const [room, setRoom] = useState(null)
+    const params = useParams()
+
+    useEffect(() => {
+        fetch(`http://localhost:4000/rooms/${params.id}`)
+            .then(resp => resp.json())
+            .then(data => setRoom(data))
+    }, [])
+
+    console.log(room)
+
+
+    if (room === null) return <h1>Loading...</h1>
     return (
         <div>
-
             <div className="items">
                 <img
-                    // src={`.${items.img}`}
+                    src={room.photo}
                     className="items__mobile"
                     height="460vh"
                     alt="home-main"
                 />
                 <div className="test">
-                    {/* <h1>{items.title}</h1> */}
+                    <h1>{room.room_title}</h1>
                     <div className="item__rating">
                         ★{" "}
                         <i>
-                            {/* {items.rating} <i style={{ color: "#717171" }}>·</i>{" "} */}
+                            {/* {room.rating} <i style={{ color: "#717171" }}>·</i>{" "} */}
                         </i>
                         {/* <i>{items.location},United States</i> */}
                         <i style={{ color: "black", textDecoration: "none" }}>
-                            {/* <i style={{ color: "#717171" }}>·</i> {items.price} */}
+                            <i style={{ color: "#717171" }}>·</i> {room.price}
                         </i>
                     </div>
-                    <button
-                    // className={`items__heart ${this.state.clicked && "heart"}`}
-                    // onClick={this.fav}
-                    ></button>
                     <img
                         src=''
                         width="95%"
@@ -34,7 +45,7 @@ export default function NearbyAppartamnet() {
                         alt="img"
                     />
                     <h2>
-                        {/* {items.type} hosted by {items.host} */}
+                        {room.home_type} type {room.Roome_type}
                     </h2>
                     {/* <h4>{items.smalldescription}</h4> */}
                     <div className="items__wind" style={{ cursor: "pointer" }}>
@@ -112,7 +123,7 @@ export default function NearbyAppartamnet() {
                         <h3>Outstanding hospitality</h3>
                     </div>
                     <h4 style={{ paddingLeft: "41px", width: "70%" }}>
-                        {/* Few guests complimented {items.host} for outstanding hospitality.. */}
+                        Few guests complimented {room.userId} for outstanding hospitality..
                     </h4>
                     <br />
                     <div className="items__icons">
@@ -139,7 +150,7 @@ export default function NearbyAppartamnet() {
                     </h4>
                     <br />
                     <hr />
-                    {/* <h3>{items.description}</h3> */}
+                    <h3>{room.room_type}</h3>
                     <h3>Contact host</h3>
                     <br />
                     <hr />
@@ -289,7 +300,7 @@ export default function NearbyAppartamnet() {
                     <hr />
                     <h2 style={{ padding: "25px 0" }}>Location</h2>
                     <h3 style={{ textDecoration: "none" }}>
-                        {/* {items.location}, Untited States. */}
+                        {room.address}
                     </h3>
                     <button className="items__btn">More about the location</button>
                     <hr className="items__mobile" />
