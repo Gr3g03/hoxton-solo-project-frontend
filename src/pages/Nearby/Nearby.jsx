@@ -46,15 +46,8 @@ export default function Neadrby() {
                                     <h4></h4>
                                 </div>
                             </div>
-                            <button
-                            // className={`resultcont__heart ${this.state.clicked && "heart"
-                            //     }`}
-                            // onClick={() => {
-                            //     this.fav(item);
-                            // }}
-                            ></button>
                             <div className="resultcont__price">
-                                <span>{room.price}</span> / night
+                                <span>${room.price}</span> / night
                             </div>
                             <div className="resultcont__star">
                                 ★
@@ -65,7 +58,7 @@ export default function Neadrby() {
                                         fontWeight: "normal",
                                     }}
                                 >
-                                    {/* {item.rating} */}
+                                    {room.stars}
                                 </span>
                             </div>
                         </div>

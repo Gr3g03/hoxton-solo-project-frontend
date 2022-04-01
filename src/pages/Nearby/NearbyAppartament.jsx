@@ -26,28 +26,17 @@ export default function NearbyAppartamnet() {
                     alt="home-main"
                 />
                 <div className="test">
-                    <h1>{room.room_title}</h1>
+                    {/* <h1>{room.room_title}</h1> */}
                     <div className="item__rating">
                         ★{" "}
                         <i>
-                            {/* {room.rating} <i style={{ color: "#717171" }}>·</i>{" "} */}
+                            {room.stars} <i style={{ color: "#717171" }}></i>
                         </i>
-                        {/* <i>{items.location},United States</i> */}
-                        <i style={{ color: "black", textDecoration: "none" }}>
-                            <i style={{ color: "#717171" }}>·</i> {room.price}
-                        </i>
+                        <i>{room.address}</i>
                     </div>
-                    <img
-                        src=''
-                        width="95%"
-                        height="460vh"
-                        className="items__img"
-                        alt="img"
-                    />
                     <h2>
-                        {room.home_type} type {room.Roome_type}
+                        {room.home_type} with {room.room_type}
                     </h2>
-                    {/* <h4>{items.smalldescription}</h4> */}
                     <div className="items__wind" style={{ cursor: "pointer" }}>
                         <svg
                             viewBox="0 0 24 24"
@@ -93,37 +82,6 @@ export default function NearbyAppartamnet() {
                     </div>
                     <h4 style={{ paddingLeft: "41px", width: "70%" }}>
                         This host committed to Airbnb's 5-step enhanced cleaning process.
-                    </h4>
-                    <br />
-                    <div className="items__icons">
-                        <svg
-                            viewBox="0 0 32 32"
-                            xmlns="http://www.w3.org/2000/svg"
-                            aria-hidden="true"
-                            role="presentation"
-                            focusable="false"
-                            style={{
-                                display: "block",
-                                height: "24px",
-                                width: "24px",
-                                marginRight: "15px",
-                                fill: "currentcolor",
-                            }}
-                        >
-                            <g
-                                vectorEffect="non-scaling-stroke"
-                                transform="translate(0,0)scale(1,1)"
-                                fill="none"
-                                stroke="#000"
-                                strokeWidth="2"
-                            >
-                                <path d="m18.7652487 2.2057265c1-1 3.658 1.999 1.244 4.413l-1.9372487 1.9662735c-.78.781-.78 2.047 0 2.828.391.391.903.586 1.415.586l8.513.001c1.104 0 2 .896 2 2s-.896 2-2 2h-1c1.104 0 2 .896 2 2s-.896 2-2 2h-1c1.104 0 2 .896 2 2s-.896 2-2 2h-1c1.104 0 2 .896 2 2s-.896 2-2 2l-11.999-.00075c-1.4799105-.0005951-2.772087-.8045363-3.46408174-1.9994017l-5.53691826.0001517c-.55228475 0-1-.4477153-1-1v-10c0-.5522847.44771525-1 1-1l3.001-.0009098c5.8382366-5.85406905 9.5222235-9.54739462 11.0519608-11.08006692z"></path>
-                            </g>
-                        </svg>
-                        <h3>Outstanding hospitality</h3>
-                    </div>
-                    <h4 style={{ paddingLeft: "41px", width: "70%" }}>
-                        Few guests complimented {room.userId} for outstanding hospitality..
                     </h4>
                     <br />
                     <div className="items__icons">
@@ -328,6 +286,6 @@ export default function NearbyAppartamnet() {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }

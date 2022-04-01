@@ -1,4 +1,8 @@
 .header {
+  display: flex;
+}
+
+.header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -17,11 +21,11 @@
   
   .header__center {
     display: flex;
-    flex: 1;
+    /* flex: 1; */
     align-items: center;
-    max-width: fit-content;
+    width: 20rem;
     padding: 10px;
-    height: 30px;
+    height: 20px;
     border: 1px solid lightgray;
     border-radius: 999px;
   }
@@ -30,7 +34,7 @@
     border: none;
     padding: 10px;
     outline-width: 0;
-    /* width: 250px; */
+    width: 250px;
   }
   
   .header__right {
