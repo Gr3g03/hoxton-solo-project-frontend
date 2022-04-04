@@ -9,11 +9,12 @@ import Footer from './pages/footer/Footer';
 import Neadrby from './pages/Nearby/Nearby';
 import NearbyAppartamnet from './pages/Nearby/NearbyAppartament';
 import Profile from './profile/profile';
+import Details from './pages/main/details';
 
 function App() {
 
   const [user, setUser] = useState(null)
-
+  const [rooms, setRooms] = useState([])
 
 
   function signUp(e) {
@@ -105,9 +106,10 @@ function App() {
       <Routes>
         <Route index element={<Navigate replace to={'/home'} />} />
         <Route path='/home' element={<Home user={user} />} />
+        <Route path='/home/:id' element={<Details user={user} rooms={rooms} setUser={setUser} />} />
         <Route path='/profile' element={<Profile user={user} setUser={setUser} />} />
-        <Route path='/nearby' element={<Neadrby />} />
-        <Route path='nearby/:id' element={<NearbyAppartamnet />} />
+        <Route path='/nearby' element={<Neadrby rooms={rooms} setRooms={setRooms} />} />
+        <Route path='nearby/:id' element={<NearbyAppartamnet user={user} rooms={rooms} setUser={setUser} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

@@ -1,11 +1,18 @@
 import { useState } from "react";
 import Search from "./Search";
 import { useNavigate } from 'react-router-dom';
+import Upload from "./UploadAirbnb";
 
 
 function Banner() {
     const [showSearch, setShowSearch] = useState(false);
     const navigate = useNavigate()
+
+
+    function handleOnClick() {
+        setShow(true)
+    }
+    const [show, setShow] = useState(false)
 
     return (
         <div className='banner'>
@@ -21,7 +28,15 @@ function Banner() {
                 <h5>
                     Plan a different kind of getaway to uncover the hidden gems near you.
                 </h5>
-                <button onClick={() => navigate('/nearby')} >Explore Nearby</button>
+                <button className="create_Airbnb" onClick={() => navigate('/nearby')} >Explore Nearby</button>
+                <br />
+                <span className='Education_list'>
+                    <button className="create_Airbnb" onClick={() =>
+                        handleOnClick()
+                    }>
+                        <span >create Airbnb</span></button>
+                    <Upload show={show} setShow={setShow} />
+                </span>
             </div>
         </div>
     )

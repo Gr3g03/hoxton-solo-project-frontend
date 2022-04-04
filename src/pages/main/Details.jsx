@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
-import './NearbyAppartament.css'
-export default function NearbyAppartamnet({ user, rooms, setUser }) {
+// import 'src/pages/Nearby/NearbyAppartament.css'
+export default function Details({ user, rooms, setUser }) {
 
     const [room, setRoom] = useState(null)
     const [reservations, setReservations] = useState([])
@@ -37,8 +37,6 @@ export default function NearbyAppartamnet({ user, rooms, setUser }) {
             // update state
             .then(data => setUser(data))
     }
-
-
 
 
     if (room === null) return <h1>Loading...</h1>

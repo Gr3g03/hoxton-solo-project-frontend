@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import Banner from "./Banner";
 
 export default function Home({ user }) {
@@ -18,15 +19,17 @@ export default function Home({ user }) {
 
             <div className='home__section'>
                 {rooms.map(room =>
-                    <div className='card'>
-                        <img src={room.photo} alt="" />
-                        <div className="card__info">
-                            <h2>{room.address}</h2>
-                            <h4> ★{room.stars}</h4>
-                            <h3>${room.price}</h3>
-                        </div>
+                    <Link to={`/home/${room.id}`} key={room.id} className="link">
+                        <div className='card'>
+                            <img src={room.photo} alt="" />
+                            <div className="card__info">
+                                <h2>{room.address}</h2>
+                                <h4> ★{room.stars}</h4>
+                                <h3>${room.price}</h3>
+                            </div>
 
-                    </div>
+                        </div>
+                    </Link>
                 )}
 
             </div>

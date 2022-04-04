@@ -35,6 +35,7 @@ function LoginBanner({ signUp, login }) {
                                 name='password'
                                 type="password"
                             />
+                            <br />
                             <button className="register_Button" type="submit" onSubmit={(e) => {
                                 e.preventDefault()
                                 navigate('/home')
@@ -42,6 +43,7 @@ function LoginBanner({ signUp, login }) {
                                 Login
                             </button>
                         </form>
+
                         <span className='Education_list'>
                             <button className="register_Button" onClick={() =>
                                 handleOnClick()

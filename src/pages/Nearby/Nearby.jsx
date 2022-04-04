@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './nearby.css'
 
-export default function Neadrby() {
+export default function Neadrby({ rooms, setRooms }) {
 
-    const [rooms, setRooms] = useState([])
+
 
     useEffect(() => {
         fetch(`http://localhost:4000/rooms`)
@@ -12,8 +12,6 @@ export default function Neadrby() {
             .then(data => setRooms(data))
     }, [])
 
-
-    console.log(rooms)
     return (
         <div className='searchPage'>
             <div className='searchPage__info'>
