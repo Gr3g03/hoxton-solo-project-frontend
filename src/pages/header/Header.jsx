@@ -20,7 +20,10 @@ function Header({ signOut }) {
             <div className='header__right'>
                 {/* <img src='./src/assets/language.svg' alt='' /> */}
                 {/* <img src='./src/assets/expand.svg' alt='' /> */}
-                <img src='./src/assets/avatar.svg' alt='' />
+
+                <Link to={'/profile'}>
+                    <img src='./src/assets/avatar.svg' alt='' />
+                </Link>
                 <button className="sign_out" onClick={signOut}>SIGN OUT</button>
             </div>
         </div>

@@ -8,6 +8,7 @@ import NotFound from './pages/NotFound';
 import Footer from './pages/footer/Footer';
 import Neadrby from './pages/Nearby/Nearby';
 import NearbyAppartamnet from './pages/Nearby/NearbyAppartament';
+import Profile from './profile/profile';
 
 function App() {
 
@@ -104,6 +105,7 @@ function App() {
       <Routes>
         <Route index element={<Navigate replace to={'/home'} />} />
         <Route path='/home' element={<Home user={user} />} />
+        <Route path='/profile' element={<Profile user={user} setUser={setUser} />} />
         <Route path='/nearby' element={<Neadrby />} />
         <Route path='nearby/:id' element={<NearbyAppartamnet />} />
         <Route path="*" element={<NotFound />} />
