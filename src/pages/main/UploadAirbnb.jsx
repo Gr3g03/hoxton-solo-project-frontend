@@ -1,19 +1,23 @@
-export default function Upload({ show, setShow }) {
+export default function Upload() {
+    // { show, setShow }
+    // if (!show) {
+    //     return null
+    // }
+    // onClick={() => setShow(false)}
 
-    if (!show) {
-        return null
-    }
     return (
-        <section className="add-modal">
-            <div className="modal">
-
-                <button className="close-button" onClick={() => setShow(false)}>X</button>
+        <section>
+            <div >
+                {/* className="add-modal"
+                className="modal"
+                className="close-button" */}
+                {/* <button  >X</button> */}
                 <h1>Enter  Information</h1>
                 <form >
                     <label>
                         home type
                         <input
-                            className="firstname"
+                            // className="firstname"
                             placeholder="home_type"
                             name='firstName'
                             type="text"
@@ -22,7 +26,7 @@ export default function Upload({ show, setShow }) {
                     <label>
                         room type
                         <input
-                            className="lastname"
+                            // className="lastname"
                             placeholder="room_type"
                             name='lastName'
                             type="text"
@@ -31,7 +35,7 @@ export default function Upload({ show, setShow }) {
                     <label>
                         occupancy
                         <input
-                            className="profilepic"
+                            // className="profilepic"
                             placeholder="total_occupancy)"
                             name='photo'
                             type="text"
@@ -41,7 +45,7 @@ export default function Upload({ show, setShow }) {
                     <label>
                         bedrooms
                         <input
-                            className="phone"
+                            // className="phone"
                             placeholder="total_bedrooms"
                             name='phone'
                             type="number"
@@ -51,93 +55,93 @@ export default function Upload({ show, setShow }) {
                     <label>
                         bathrooms
                         <input
-                            className="email"
+                            // className="email"
                             placeholder="total_bathrooms"
                             name='email'
-                            type="email"
+                            type="number"
                         />
                     </label>
                     <label>
                         address
                         <input
-                            className="password"
+                            // className="password"
                             placeholder="address"
                             name='password'
-                            type="password"
+                            type="text"
                         />
                     </label>
 
                     <label>
                         tv
                         <input
-                            className="password"
+                            // className="password"
                             placeholder="tv"
                             name='password'
-                            type="password"
+                            type="number"
                         />
                     </label>
                     <label>
                         Kitchen
                         <input
-                            className="password"
+                            // className="password"
                             placeholder="kitchen"
                             name='password'
-                            type="password"
+                            type="number"
                         />
                     </label>
                     <label>
                         air Con
                         <input
-                            className="password"
+                            // className="password"
                             placeholder="air con"
                             name='password'
-                            type="password"
+                            type="number"
                         />
                     </label>
                     <label>
                         heating
                         <input
-                            className="password"
+                            // className="password"
                             placeholder="heating"
                             name='password'
-                            type="password"
+                            type="number"
                         />
                     </label>
                     <label>
                         internet
                         <input
-                            className="password"
+                            // className="password"
                             placeholder="internet"
                             name='password'
-                            type="password"
+                            type="number"
                         />
                     </label>
                     <label>
                         price
                         <input
-                            className="password"
+                            // className="password"
                             placeholder="price"
                             name='password'
-                            type="password"
+                            type="number"
                         />
                     </label>
                     <label>
                         photo
                         <input
-                            className="password"
+                            // className="password"
                             placeholder="photo"
                             name='password'
-                            type="password"
+                            type="text"
                         />
                     </label>
 
                     <label>
                         stars
                         <input
-                            className="password"
+                            // className="password"
                             placeholder="stars"
                             name='password'
-                            type="password"
+                            type="number"
                         />
                     </label>
 

@@ -12,6 +12,7 @@ export default function Neadrby({ rooms, setRooms }) {
             .then(data => setRooms(data))
     }, [])
 
+
     return (
         <div className='searchPage'>
             <div className='searchPage__info'>

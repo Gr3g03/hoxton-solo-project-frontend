@@ -10,6 +10,7 @@ import Neadrby from './pages/Nearby/Nearby';
 import NearbyAppartamnet from './pages/Nearby/NearbyAppartament';
 import Profile from './profile/profile';
 import Details from './pages/main/details';
+import Upload from './pages/main/UploadAirbnb';
 
 function App() {
 
@@ -108,6 +109,7 @@ function App() {
         <Route path='/home' element={<Home user={user} />} />
         <Route path='/home/:id' element={<Details user={user} rooms={rooms} setUser={setUser} />} />
         <Route path='/profile' element={<Profile user={user} setUser={setUser} />} />
+        <Route path='/upload' element={<Upload />} />
         <Route path='/nearby' element={<Neadrby rooms={rooms} setRooms={setRooms} />} />
         <Route path='nearby/:id' element={<NearbyAppartamnet user={user} rooms={rooms} setUser={setUser} />} />
         <Route path="*" element={<NotFound />} />

@@ -7,7 +7,7 @@ export default function NearbyAppartamnet({ user, rooms, setUser }) {
     const [reservations, setReservations] = useState([])
     const params = useParams()
 
-    console.log(reservations);
+    // console.log(reservations);
     useEffect(() => {
         fetch(`http://localhost:4000/rooms/${params.id}`)
             .then(resp => resp.json())
@@ -15,27 +15,32 @@ export default function NearbyAppartamnet({ user, rooms, setUser }) {
     }, [])
 
 
-    function postToReservations(roomId, id) {
-        fetch('http://localhost:4000/reservations', {
-            method: "POST",
+    async function postToReservations(userId) {
+        await fetch(`http://localhost:4000/reservations`, {
+            method: 'POST',
             headers: {
                 Authorization: localStorage.token,
-                "Content-Type": "application/json"
+                'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                roomId: roomId,
-                userId: id,
+                roomId: room.id,
+                userId: userId,
                 total: 100,
-                price: 50,
-                start_date: '21.03.2022',
-                end_date: '21.03.2022',
-                created_at: '21.03.2022',
-                updated_at: '21.03.2022'
+                price: room.price,
+                start_date: Date(),
+                end_date: Date(),
+                created_at: Date(),
+                updated_at: Date()
             })
         })
-            .then(resp => resp.json())
-            // update state
-            .then(data => setUser(data))
+            .then(res => res.json())
+            .then(data => {
+                if (data.error) {
+                    alert(data.error)
+                } else {
+                    setReservations(data)
+                }
+            })
     }
 
 
@@ -286,8 +291,8 @@ export default function NearbyAppartamnet({ user, rooms, setUser }) {
                     <h3 style={{ textDecoration: "none" }}>
                         {room.address}
                     </h3>
-                    <button className="items__btn" onClick={() => postToReservations(rooms.id, user.id)}
-                    >More about the location</button>
+                    <button className="items__btn" onClick={() => postToReservations(room.userId)}
+                    >Book Now</button>
                     <hr className="items__mobile" />
                     <div className="items__winds" style={{ cursor: "pointer" }}>
                         <svg

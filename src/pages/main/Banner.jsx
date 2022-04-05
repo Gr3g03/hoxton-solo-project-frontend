@@ -9,10 +9,11 @@ function Banner() {
     const navigate = useNavigate()
 
 
-    function handleOnClick() {
-        setShow(true)
-    }
-    const [show, setShow] = useState(false)
+    // function handleOnClick() {
+    //     setShow(true)
+    // }
+    // const [show, setShow] = useState(false)
+    // <Upload show={show} setShow={setShow} />
 
     return (
         <div className='banner'>
@@ -32,10 +33,11 @@ function Banner() {
                 <br />
                 <span className='Education_list'>
                     <button className="create_Airbnb" onClick={() =>
-                        handleOnClick()
+                        // handleOnClick()
+                        navigate('/Upload')
                     }>
                         <span >create Airbnb</span></button>
-                    <Upload show={show} setShow={setShow} />
+
                 </span>
             </div>
         </div>

@@ -31,7 +31,7 @@ export default function Profile({ user, setUser }) {
                                         <div className="card-body">
                                             <img src='https://mpng.subpng.com/20180528/ccc/kisspng-computer-icons-user-avatar-woman-avatar-5b0c5b2f6ecaa1.2446433615275364314538.jpg' alt="User" className="user_avatar" />
                                             {/* <h5 className="user_job">{getUser.firstName} {getUser.lastName}</h5> */}
-                                            <p className="user_proffesion">{getUser.total}$</p>
+                                            <p className="user_proffesion">{getUser.price}$</p>
                                             <p className="User_location">Start Date{getUser.start_date}</p>
                                         </div>
                                     </div>
