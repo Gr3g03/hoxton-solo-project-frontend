@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Banner from "./Banner";
 
-export default function Home({ user }) {
+export default function Home({ startDate, endDate, setStartDate, setEndDate }) {
     const [rooms, setRooms] = useState([])
 
     useEffect(() => {
@@ -15,7 +15,7 @@ export default function Home({ user }) {
 
         <section className='home'>
 
-            <Banner />
+            <Banner startDate={startDate} endDate={endDate} setStartDate={setStartDate} setEndDate={setEndDate} />
 
             <div className='home__section'>
                 {rooms.map(room =>

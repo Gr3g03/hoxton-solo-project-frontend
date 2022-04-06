@@ -1,24 +1,17 @@
 import { useState } from "react";
 import Search from "./Search";
 import { useNavigate } from 'react-router-dom';
-import Upload from "./UploadAirbnb";
 
 
-function Banner() {
+function Banner({ startDate, endDate, setStartDate, setEndDate }) {
     const [showSearch, setShowSearch] = useState(false);
     const navigate = useNavigate()
 
 
-    // function handleOnClick() {
-    //     setShow(true)
-    // }
-    // const [show, setShow] = useState(false)
-    // <Upload show={show} setShow={setShow} />
-
     return (
         <div className='banner'>
             <div className='banner__search'>
-                {showSearch && <Search />}
+                {showSearch && <Search startDate={startDate} endDate={endDate} setStartDate={setStartDate} setEndDate={setEndDate} />}
 
                 <button onClick={() => setShowSearch(!showSearch)} className='banner__searchButton' >
                     {showSearch ? "Hide" : "Search Dates"}

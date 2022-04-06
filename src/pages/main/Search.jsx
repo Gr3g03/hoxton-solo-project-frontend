@@ -4,18 +4,18 @@ import { DateRangePicker } from "react-date-range";
 import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 
-function Search() {
-    const [startDate, setStartDate] = useState(new Date());
-    const [endDate, setEndDate] = useState(new Date());
+
+function Search({ startDate, endDate, setStartDate, setEndDate }) {
+
 
     const navigate = useNavigate()
-
 
 
     function handleSelect(ranges) {
         setStartDate(ranges.selection.startDate);
         setEndDate(ranges.selection.endDate);
     }
+
 
     const selectionRange = {
         startDate: startDate,

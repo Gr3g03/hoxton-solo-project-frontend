@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 import './nearby.css'
 
-export default function Neadrby({ rooms, setRooms }) {
+export default function Neadrby({ rooms, setRooms, endDate, startDate }) {
 
 
 
@@ -11,6 +11,18 @@ export default function Neadrby({ rooms, setRooms }) {
             .then(resp => resp.json())
             .then(data => setRooms(data))
     }, [])
+
+    let days = 0
+
+
+    function countDays() {
+        days = endDate.getTime() - startDate.getTime()
+        let DifferenceI_Days = days / (1000 * 3600 * 24)
+        return DifferenceI_Days
+
+    }
+
+    console.log(countDays())
 
 
     return (
@@ -47,6 +59,8 @@ export default function Neadrby({ rooms, setRooms }) {
                             </div>
                             <div className="resultcont__price">
                                 <span>${room.price}</span> / night
+                                <br />
+                                <span>${countDays() * room.price}</span> / Total
                             </div>
                             <div className="resultcont__star">
                                 ★

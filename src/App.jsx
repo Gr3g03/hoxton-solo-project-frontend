@@ -17,6 +17,11 @@ function App() {
   const [user, setUser] = useState(null)
   const [rooms, setRooms] = useState([])
 
+  const [startDate, setStartDate] = useState(new Date());
+  const [endDate, setEndDate] = useState(new Date());
+
+
+
 
   function signUp(e) {
     e.preventDefault()
@@ -106,11 +111,11 @@ function App() {
       <Header signOut={signOut} />
       <Routes>
         <Route index element={<Navigate replace to={'/home'} />} />
-        <Route path='/home' element={<Home user={user} />} />
+        <Route path='/home' element={<Home startDate={startDate} endDate={endDate} setStartDate={setStartDate} setEndDate={setEndDate} />} />
         <Route path='/home/:id' element={<Details user={user} rooms={rooms} setUser={setUser} />} />
         <Route path='/profile' element={<Profile user={user} setUser={setUser} />} />
         <Route path='/upload' element={<Upload user={user} setRooms={setRooms} />} />
-        <Route path='/nearby' element={<Neadrby rooms={rooms} setRooms={setRooms} />} />
+        <Route path='/nearby' element={<Neadrby rooms={rooms} setRooms={setRooms} startDate={startDate} endDate={endDate} />} />
         <Route path='nearby/:id' element={<NearbyAppartamnet user={user} rooms={rooms} setUser={setUser} />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
