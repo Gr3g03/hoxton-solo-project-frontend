@@ -60,13 +60,16 @@ export default function Upload({ user, setRooms }) {
 
 
         <section>
-            <div >
-                <h1>Enter  Information</h1>
-                <form onSubmit={createAirbnb}>
+            <div className="upload_form" >
+                <div className="image_container">
+                    <h1 className="h1_info">Enter  Information  </h1>
+                    <img className="imgimg" src="https://i0.wp.com/skarredghost.com/wp-content/uploads/2017/07/amaze_logo.jpg?resize=800%2C445&ssl=1 alt=" />
+                </div>
+                <form className="upload_airbnb" onSubmit={createAirbnb}>
                     <label>
                         home type
                         <input
-                            // className="firstname"
+                            className="list"
                             placeholder="home_type"
                             name='homeType'
                             type="text"
@@ -75,7 +78,7 @@ export default function Upload({ user, setRooms }) {
                     <label>
                         room type
                         <input
-                            // className="lastname"
+                            className="list"
                             placeholder="room_type"
                             name='roomType'
                             type="text"
@@ -84,7 +87,7 @@ export default function Upload({ user, setRooms }) {
                     <label>
                         occupancy
                         <input
-                            // className="profilepic"
+                            className="list"
                             placeholder="total_occupancy"
                             name='occupancy'
                             type="text"
@@ -94,7 +97,7 @@ export default function Upload({ user, setRooms }) {
                     <label>
                         bedrooms
                         <input
-                            // className="phone"
+                            className="list"
                             placeholder="total_bedrooms"
                             name='bedrooms'
                             type="number"
@@ -104,7 +107,7 @@ export default function Upload({ user, setRooms }) {
                     <label>
                         bathrooms
                         <input
-                            // className="email"
+                            className="list"
                             placeholder="total_bathrooms"
                             name='bathrooms'
                             type="number"
@@ -113,7 +116,7 @@ export default function Upload({ user, setRooms }) {
                     <label>
                         address
                         <input
-                            // className="password"
+                            className="list"
                             placeholder="address"
                             name='address'
                             type="text"
@@ -123,7 +126,7 @@ export default function Upload({ user, setRooms }) {
                     <label>
                         tv
                         <input
-                            // className="password"
+                            className="list"
                             placeholder="tv"
                             name='tv'
                             type="number"
@@ -132,7 +135,7 @@ export default function Upload({ user, setRooms }) {
                     <label>
                         Kitchen
                         <input
-                            // className="password"
+                            className="list"
                             placeholder="kitchen"
                             name='Kitchen'
                             type="number"
@@ -141,7 +144,7 @@ export default function Upload({ user, setRooms }) {
                     <label>
                         air Con
                         <input
-                            // className="password"
+                            className="list"
                             placeholder="air con"
                             name='airCon'
                             type="number"
@@ -150,7 +153,7 @@ export default function Upload({ user, setRooms }) {
                     <label>
                         heating
                         <input
-                            // className="password"
+                            className="list"
                             placeholder="heating"
                             name='heating'
                             type="number"
@@ -159,7 +162,7 @@ export default function Upload({ user, setRooms }) {
                     <label>
                         internet
                         <input
-                            // className="password"
+                            className="list"
                             placeholder="internet"
                             name='internet'
                             type="number"
@@ -168,7 +171,7 @@ export default function Upload({ user, setRooms }) {
                     <label>
                         price
                         <input
-                            // className="password"
+                            className="list"
                             placeholder="price"
                             name='price'
                             type="number"
@@ -177,23 +180,12 @@ export default function Upload({ user, setRooms }) {
                     <label>
                         photo
                         <input
-                            // className="password"
+                            className="list"
                             placeholder="photo"
                             name='photo'
                             type="text"
                         />
                     </label>
-
-                    {/* <label>
-                        stars
-                        <input
-                            // className="password"
-                            placeholder="stars"
-                            name='stars'
-                            type="number"
-                        />
-                    </label> */}
-
                     <input type='submit' className="submit" value={'SAVE'} />
                 </form>
             </div>
